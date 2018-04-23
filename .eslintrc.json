@@ -1,3 +1,6 @@
 {
-  "extends": "fullstack"
+  "extends": "fullstack",
+  "parserOptions": {
+    "ecmaVersion": 2017
+  }
 }
