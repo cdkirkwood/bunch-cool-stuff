@@ -1,4 +1,5 @@
 import axios from 'axios'
+import asyncCatcher from '../async-catcher'
 
 //actions
 //const GET_PRODUCT = 'GET_PRODUCT'
@@ -11,13 +12,12 @@ const getProducts = products => {
 }
 
 //Thunks
-export const fetchProducts = () => async(dispatch) => {
+export const fetchProducts = () => asyncCatcher(async(dispatch) => {
     const response = await axios.get('/api/products')
     dispatch(getProducts(response.data))
-    console.error.bind(console)
-}
+})
 
-const ProductsReducer = (state = [], action) => {
+const productsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_PRODUCTS:
       return action.products
@@ -26,4 +26,4 @@ const ProductsReducer = (state = [], action) => {
   }
 }
 
-export default ProductsReducer
+export default productsReducer
