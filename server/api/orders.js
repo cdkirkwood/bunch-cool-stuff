@@ -31,8 +31,9 @@ router.post('/', asyncHandler(async (req, res, next) => {
   await OrderQuantity.create({
     orderId: order.id, productId, quantity
   })
+  const newOrder = await Order.scope('populated').findById(order.id)
   req.session.orderId = order.id
-  res.send(order)
+  res.send(newOrder)
 }))
 
 router.put('/:id', asyncHandler(async (req, res, next) => {
@@ -43,15 +44,18 @@ router.put('/:id', asyncHandler(async (req, res, next) => {
     defaults: { quantity }
   })
   const newQuantity = quantity + item[0].quantity
-  if (!item[1]) await item[0].update({ quantity: newQuantity })
+  if (!item[1]) {
+    if (!quantity) await item[0].destroy()
+    else await item[0].update({ quantity: newQuantity })
+  }
   const order = await Order.scope('populated').findById(orderId)
   res.json(order)
 }))
 
 router.put('/:id/pending', asyncHandler(async (req, res, next) => {
-  const { fullName, shippingAddress } = req.body
+  const { fullName, shippingAddress, emailAddress } = req.body
   const order = await Order.scope('populated').findById(+req.params.id)
-  const updated = await order.update({ fullName, shippingAddress })
+  const updated = await order.update({ fullName, shippingAddress, emailAddress })
   res.json(updated)
 }))
 

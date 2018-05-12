@@ -1,28 +1,28 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const AllProducts = (props) => {
-    return props.products ?
-      <div className="all-products-container">
-        <h1>Products</h1>
-        <div className="products-grid">
-          {props.products.length && props.products.map(product => (
-            <div key={product.id} className="product-card">
-              <img className="image" src={product.imageUrl} />
-              <br />
-              <NavLink className="NavLink" to={`/product/${product.id}`}>{product.name}</NavLink>
-              <h3>{`$${product.price}`}</h3>
-            </div>
-          )
-          )}
-        </div>
+  const products = props.type ?
+    props.products.filter(product => product.variety === props.type)
+    : props.products
+  return (
+    <div className="all-products-container">
+      <h1>Products</h1>
+      <div className="products-grid">
+        {products.map(product => (
+          <div key={product.id} className="product-card">
+          <NavLink className="NavLink" to={`/product/${product.id}`}>
+            <img className="image" src={product.imageUrl} />
+          </NavLink>
+            <br />
+            <NavLink className="NavLink" to={`/product/${product.id}`}>{product.name}</NavLink>
+            <h3>{`$${product.price}`}</h3>
+          </div>
+        )
+        )}
       </div>
-      : <h3>...Loading</h3>
+    </div>
+  )
 }
 
-const mapStateToProps = state => ({ products: state.products })
-
-const AllProductsContainer = connect(mapStateToProps)(AllProducts)
-
-export default AllProductsContainer
+export default AllProducts

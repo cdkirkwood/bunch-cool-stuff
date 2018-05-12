@@ -6,7 +6,7 @@ import { postCart, editCart } from '../store'
 class SingleProduct extends React.Component {
 
   constructor(props) {
-    super(props);
+    super(props)
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,10 +22,7 @@ class SingleProduct extends React.Component {
   }
 
   render() {
-    let product;
-    if (this.props.products) {
-      product = this.props.products.length ? this.props.products.find(elem => elem.id === +this.props.match.params.id) : null
-    }
+    const product = this.props.products.find(elem => elem.id === +this.props.match.params.id)
     return product ? (
       <form className="single-product-container" onSubmit={this.handleSubmit}>
         <img src={product.imageUrl} className="image" />
@@ -41,7 +38,7 @@ class SingleProduct extends React.Component {
 
 const mapStateToProps = state => ({ products: state.products, user: state.user, cart: state.cart })
 
-const mapDispatch = (dispatch, ownProps) => ({
+const mapDispatch = (dispatch) => ({
   editCart: (orderId, productId, quantity) =>
     dispatch(editCart(orderId, productId, quantity)),
   postCart: (userId, productId, quantity) =>

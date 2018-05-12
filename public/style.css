@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: "Courier New", Courier, monospace;
   background-color: black;
   color: yellow;
 }
@@ -21,11 +21,12 @@ label {
   display: flex;
 } */
 
-/* .sidebar {
-  position: fixed;
-  height: 100%;
-  z-index: 1;
-} */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20vh;
+}
 
 nav a {
   display: flex;
@@ -42,6 +43,7 @@ nav a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 20%;
 }
 
 .NavLink {
@@ -68,4 +70,102 @@ form div {
 .single-product-container {
   display: grid;
   grid-template-columns: 1fr 1fr
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column; 
+}
+
+.cart-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 15%;
+}
+
+#cart-image {
+  width: 15vw;
+  height: 25vh;
+  padding: 40px;
+}
+
+.cart-image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary-card {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.summary-conatiner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-name {
+  display: flex;
+  justify-content: space-around;
+}
+
+.checkout-name {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#email {
+  width: 40%;
+}
+
+.remove-button {
+  background-color: black;
+  color: yellow;
+  border-color: black;
+  font-size: 100%;
+}
+
+.StripeElement {
+  display: block;
+  margin: 10px 0 20px 0;
+  max-width: 500px;
+  padding: 10px 14px;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border-radius: 4px;
+  background: white;
+}
+.StripeElement--focus {
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+.StripeElement.PaymentRequestButton {
+  padding: 0;
 }

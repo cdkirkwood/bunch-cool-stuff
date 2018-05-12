@@ -21,14 +21,20 @@ const Order = db.define('order', {
   },
   shippingAddress: {
     type: Sequelize.TEXT
+  },
+  emailAddress: {
+    type: Sequelize.STRING,
+    validate: {
+      isEmail: true
+    }
   }
 }, {
     getterMethods: {
       subTotal() {
-        if (this.superpowers) {
+        if (this.products) {
 
-          return this.superpowers.reduce((total, power) => {
-            total += power.price * power['order-quantity'].quantity
+          return this.products.reduce((total, product) => {
+            total += product.price * product.orderQuantity.quantity
             return total;
           }, 0)
         }
