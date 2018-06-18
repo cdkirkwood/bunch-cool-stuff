@@ -6,8 +6,9 @@ const stripe = require('stripe')(
 module.exports = router
 
 router.post('/', (req, res, next) => {
+  const amount = req.body.amount * 100
   stripe.charges.create({
-    amount: req.body.amount,
+    amount,
     currency: 'usd',
     source: req.body.token, // obtained with Stripe.js
     description: 'Charge for daniel.harris@example.com'

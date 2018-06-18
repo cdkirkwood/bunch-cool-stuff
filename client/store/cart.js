@@ -32,7 +32,7 @@ const clearCart = cart => {
 
 //Thunks
 export const fetchCart = userId => asyncCatcher(async (dispatch) => {
-  const response = await axios.get(`/api/orders/cart?userId=${userId}`)
+  const response = await axios.get(`/api/orders/cart?userId=${userId}token=1234`)
   dispatch(getCart(response.data))
 })
 
@@ -58,7 +58,7 @@ export const completeOrder = (orderId, amount, token) => asyncCatcher(async (dis
   await axios.post('/api/stripe', {amount, token})
   await axios.put(`/api/orders/${orderId}/complete`)
   dispatch(clearCart())
-  history.push('/')
+  history.push('/checkout/success')
 })
 
 

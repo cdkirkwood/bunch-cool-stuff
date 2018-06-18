@@ -16,11 +16,12 @@ router.get('/cart', asyncHandler(async (req, res, next) => {
   const userId = +req.query.userId
   let cart
   if (!isNaN(userId)) {
-    cart = await Order.scope('populated').findAll({ where: { userId, status: 'active' } })
+    cart = await Order.scope('populated').findOne({ where: { userId, status: 'active' } })
   } else {
-    cart = await (req.session.orderId ?
-      Order.scope('populated').findById(req.session.orderId)
-      : {})
+    cart = await Order.scope('populated').findOne({
+        where: {id: req.session.orderId, status: 'active'}
+      })
+      || {}
   }
   res.json(cart)
 }))

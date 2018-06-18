@@ -4,7 +4,6 @@ const asyncHandler = require('express-async-handler')
 module.exports = router
 
 router.get('/', asyncHandler(async (req, res, next) => {
-  console.log('this is product', Product)
   const products = await Product.scope('populated').findAll()
   res.json(products)
 }))

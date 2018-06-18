@@ -23,7 +23,7 @@ const removeUser = () => ({type: REMOVE_USER})
  */
 export const me = () =>
   dispatch =>
-    axios.get('/auth/me')
+    axios.get('/auth/me?token=1234')
       .then(res =>
         dispatch(getUser(res.data || defaultUser)))
       .catch(err => console.log(err))

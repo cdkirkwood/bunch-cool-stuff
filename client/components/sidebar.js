@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => (
   <div className="sidebar">
+    <img src="/abcs-clown-boy.jpg" />
     <NavLink className="NavLink" to="/">All Products</NavLink>
     <NavLink className="NavLink" to="/accessories">Accessories</NavLink>
     <NavLink className="NavLink" to="/caps">Caps</NavLink>

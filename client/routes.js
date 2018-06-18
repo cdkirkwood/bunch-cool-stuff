@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, AllProducts, SingleProduct, Cart, Checkout, Payment} from './components'
+import {Login, Signup, UserHome, AllProducts, SingleProduct, Cart, Checkout, Payment, OrderConfirmation, ProductForm} from './components'
 import {me, fetchProducts, fetchCart} from './store'
 
 /**
@@ -24,10 +24,13 @@ class Routes extends Component {
         <Route path="/accessories" render={() => <AllProducts products={products} type={'accessory'} />} />
         <Route path="/caps" render={() => <AllProducts products={products} type={'cap'} />} />
         <Route path="/tees" render={() => <AllProducts products={products} type={'tee'} />} />
-        <Route path="/product/:id" component={SingleProduct} />
+        <Route exact path="/product/add" component={ProductForm} />
+        <Route exact path="/product/:id" component={SingleProduct} />
+        <Route path="/product/:id/edit" render={() => <ProductForm products={products} />} />
         <Route path="/cart" component={Cart} />
         <Route exact path="/checkout" component={Checkout} />
         <Route path="/checkout/payment" component={Payment} />
+        <Route path="/checkout/success" component={OrderConfirmation} />
         {
           isLoggedIn &&
             <Switch>

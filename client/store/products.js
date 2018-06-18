@@ -1,8 +1,7 @@
 import axios from 'axios'
-import asyncCatcher from '../async-catcher'
+import asyncCatcher from 'async-handler-middleware'
 
 //actions
-//const GET_PRODUCT = 'GET_PRODUCT'
 const GET_PRODUCTS = 'GET_PRODUCTS'
 
 //action creators
@@ -12,9 +11,9 @@ const getProducts = products => {
 }
 
 //Thunks
-export const fetchProducts = () => asyncCatcher(async(dispatch) => {
-    const response = await axios.get('/api/products')
-    dispatch(getProducts(response.data))
+export const fetchProducts = () => asyncCatcher(async (dispatch) => {
+  const response = await axios.get('/api/products?token=1234')
+  dispatch(getProducts(response.data))
 })
 
 const productsReducer = (state = [], action) => {

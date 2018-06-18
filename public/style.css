@@ -10,22 +10,18 @@ a {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 6fr;
 }
 
 label {
   display: block;
 }
 
-/* .main-container {
-  display: flex;
-} */
-
 .sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 20vh;
+  height: 80vh;
 }
 
 nav a {
@@ -109,11 +105,29 @@ form div {
   justify-content: center;
 }
 
-.checkout-conatiner {
+.checkout-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.checkout-input {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkout-small {
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-large {
+  width: 25vw;
 }
 
 .summary-card {
@@ -130,20 +144,7 @@ form div {
   align-items: center;
 }
 
-.checkout-name {
-  display: flex;
-  justify-content: space-around;
-}
 
-.checkout-name {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
-
-#email {
-  width: 40%;
-}
 
 .remove-button {
   background-color: black;
@@ -169,3 +170,4 @@ form div {
 .StripeElement.PaymentRequestButton {
   padding: 0;
 }
+

@@ -12,12 +12,12 @@ const { stripeApiKey } = require('../secrets')
 import './socket'
 
 ReactDOM.render(
-  <StripeProvider apiKey={stripeApiKey}>
+  // <StripeProvider apiKey={stripeApiKey}>
     <Provider store={store}>
       <Router history={history}>
         <App />
       </Router>
-    </Provider>
-  </StripeProvider>,
+    </Provider>,
+  // </StripeProvider>,
   document.getElementById('app')
 )

@@ -22,21 +22,29 @@ class Checkout extends Component {
 
   render() {
     return (
-      <form className="checkout-conatiner" onSubmit={this.handleSubmit}>
+      <form className="checkout-form" onSubmit={this.handleSubmit}>
         <h3>Checkout</h3>
         <br />
         <h3>Contact Information</h3>
-        <input name="firstName" type="text" placeholder="First Name" />
-        <input name="lastName" type="text" placeholder="Last Name" />
-        <input name="address1" type="text" placeholder="Address line 1" />
-        <input name="address2" type="text" placeholder="Address line 2" />
-        <input id="email" name="email" type="text" placeholder="Email Address" />
-        <input name="city" type="text" placeholder="City" />
-        <input name="state" type="text" placeholder="State" />
-        <input name="zip" type="text" placeholder="Zip" />
+        <div className="checkout-input">
+          <div className="checkout-small">
+            <input name="firstName" type="text" placeholder="First Name" />
+            <input name="lastName" type="text" placeholder="Last Name" />
+          </div>
+          <input className="checkout-large" name="email" type="text" placeholder="Email Address" />
+          <input className="checkout-large" name="address1" type="text" placeholder="Address line 1" />
+          <input className="checkout-large" name="address2" type="text" placeholder="Address line 2" />
+          <div className="checkout-small">
+            <input name="city" type="text" placeholder="City" />
+            <input name="state" type="text" placeholder="State" />
+          </div>
+          <div className="checkout-small">
+            <input name="zip" type="text" placeholder="Zip" />
+            <input name="country" type="text" placeholder="Country" />
+          </div>
+        </div>
         <button>Proceed</button>
         <Summary />
-        <NavLink to="/checkout/payment">Payment</NavLink>
       </form>
     )
   }
