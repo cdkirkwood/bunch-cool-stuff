@@ -23,7 +23,7 @@
   "dependencies": {
     "async-handler-middleware": "^1.0.2",
     "axios": "^0.15.3",
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.18.3",
     "compression": "^1.7.1",
     "connect-session-sequelize": "^4.1.0",
     "express": "^4.14.1",
@@ -33,7 +33,7 @@
     "morgan": "^1.8.1",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
-    "pg": "^6.1.2",
+    "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "prop-types": "^15.5.8",
     "react": "^16.3.2",
@@ -44,7 +44,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0",
-    "sequelize": "^4.3.1",
+    "sequelize": "^4.37.10",
     "socket.io": "^2.0.3",
     "stripe": "^5.9.0"
   },
@@ -72,6 +72,6 @@
     "redux-mock-store": "^1.2.3",
     "supertest": "^3.0.0",
     "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.9"
+    "webpack-cli": "^2.1.5"
   }
 }

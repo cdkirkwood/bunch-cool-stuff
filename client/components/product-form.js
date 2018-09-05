@@ -4,14 +4,8 @@ import {connect} from 'react-redux'
 
 
 class ProductForm extends Component {
-  constructor(props) {
-    super(props)
-    //this.handleSubmit = this.handleSubmit.bind(this)
-  }
 
   render() {
-    // const product = this.props.products ?
-    // this.props.products.find(elem => elem.id === 1) : {}
     return (
       <form onSubmit={this.handleSubmit}>
         <h1>Add Product</h1>

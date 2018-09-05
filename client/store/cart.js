@@ -32,7 +32,7 @@ const clearCart = cart => {
 
 //Thunks
 export const fetchCart = userId => asyncCatcher(async (dispatch) => {
-  const response = await axios.get(`/api/orders/cart?userId=${userId}token=1234`)
+  const response = await axios.get(`/api/orders/cart?userId=${userId}`)
   dispatch(getCart(response.data))
 })
 
