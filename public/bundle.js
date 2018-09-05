@@ -767,7 +767,7 @@ var Navbar = function Navbar(_ref) {
       isLoggedIn = _ref.isLoggedIn;
   return _react.default.createElement("div", {
     className: "navbar-container"
-  }, _react.default.createElement("h1", null, "A Bunch of Cool Shit"), isLoggedIn ? _react.default.createElement("div", {
+  }, _react.default.createElement("h1", null, "A Bunch of Cool Stuff"), isLoggedIn ? _react.default.createElement("div", {
     className: "nav-items"
   }, _react.default.createElement(_reactRouterDom.Link, {
     className: "NavLink",
