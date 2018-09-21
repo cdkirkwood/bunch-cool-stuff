@@ -12,7 +12,7 @@ const getProducts = products => {
 
 //Thunks
 export const fetchProducts = () => asyncCatcher(async (dispatch) => {
-  const response = await axios.get('/api/products?token=1234')
+  const response = await axios.get('/api/products')
   dispatch(getProducts(response.data))
 })
 
