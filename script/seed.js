@@ -15,42 +15,42 @@ async function seed () {
       name: 'Wicky throw pillow',
       price: 30.00,
       description: 'The illest throw pillow ever made',
-      imageUrl: 'https://assets.bigcartel.com/product_images/213081301/product_image.jpg?auto=format&fit=max&h=1000&w=1000',
+      imageUrl: '/wicky-pillow.jpg',
       variety: 'accessory'
     }),
     Product.create({
       name: 'ABCS NY cap',
       price: 20.00,
       description: 'Brooklyn, Bronx, Queens and Staten From the Battery to the top of Manhattan Asian, Middle-Eastern and Latin Black, White, New York you make it happen!',
-      imageUrl: 'https://assets.bigcartel.com/product_images/213084121/product_image.jpg?auto=format&fit=max&h=1000&w=1000',
+      imageUrl: '/abcs-hat.jpg',
       variety: 'cap'
     }),
     Product.create({
       name: 'Coffee queen t-shirt',
       price: 25.00,
       description: 'Tenga un cafecito mijo. \n (Have a coffee my dear.)',
-      imageUrl: 'https://assets.bigcartel.com/product_images/213082414/product_image.jpg?auto=format&fit=max&h=1000&w=1000',
+      imageUrl: '/coffee-queen-tee.jpg',
       variety: 'tee'
     }),
     Product.create({
       name: 'Coffee Demon throw pillow',
       price: 30.00,
       description: 'Cop this pillow but keep it away from your coffee. The coffee demon is a caffeine fiend out to consume your soul and cause havoc.',
-      imageUrl: 'https://assets.bigcartel.com/product_images/213081538/product_image.jpg?auto=format&fit=max&h=1000&w=1000',
+      imageUrl: '/coffee-demon.jpg',
       variety: 'accessory'
     }),
     Product.create({
       name: 'Wicky Rat tee',
       price: 25.00,
       description: 'Yer!',
-      imageUrl: 'https://assets.bigcartel.com/product_images/213083479/product_image.jpg?auto=format&fit=max&h=1000&w=1000',
+      imageUrl: '/wicky-rat-tee.jpg',
       variety: 'tee'
     }),
     Product.create({
       name: 'Wanda Rat throw pillow',
       price: 30.00,
       description: 'Another ting for the youth dem',
-      imageUrl: 'https://assets.bigcartel.com/product_images/213081433/product_image.jpg?auto=format&fit=max&h=1000&w=1000',
+      imageUrl: '/wanda-rat.jpg',
       variety: 'accessory'
     })
   ])

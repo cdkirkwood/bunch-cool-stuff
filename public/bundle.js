@@ -2033,7 +2033,7 @@ var fetchProducts = function fetchProducts() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return _axios.default.get('/api/products?token=1234');
+              return _axios.default.get('/api/products');
 
             case 2:
               response = _context.sent;
@@ -2128,7 +2128,7 @@ var removeUser = function removeUser() {
 
 var me = function me() {
   return function (dispatch) {
-    return _axios.default.get('/auth/me?token=1234').then(function (res) {
+    return _axios.default.get('/auth/me').then(function (res) {
       return dispatch(getUser(res.data || defaultUser));
     }).catch(function (err) {
       return console.log(err);
