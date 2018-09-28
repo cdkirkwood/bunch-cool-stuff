@@ -782,11 +782,8 @@ var Navbar = function Navbar(_ref) {
     className: "nav-items"
   }, _react.default.createElement(_reactRouterDom.Link, {
     className: "NavLink",
-    to: "/login"
-  }, "Login"), _react.default.createElement(_reactRouterDom.Link, {
-    className: "NavLink",
-    to: "/signup"
-  }, "Sign Up"), _react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, "Home"), _react.default.createElement(_reactRouterDom.Link, {
     className: "NavLink",
     to: "/cart"
   }, "Cart")));
